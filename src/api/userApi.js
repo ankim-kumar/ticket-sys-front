@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const rootUrl = process.env.REACT_APP_API_URL || "/v1/";
+const registerUrl = rootUrl + "user/register";
 const loginUrl = rootUrl + "user/login";
 const userProfileUrl = rootUrl + "user";
 const logoutUrl = rootUrl + "user/logout";
@@ -10,7 +11,7 @@ const userVerificationUrl = userProfileUrl + "/verify";
 export const userRegistration = (frmData) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const res = await axios.post(userProfileUrl, frmData);
+      const res = await axios.post(registerUrl, frmData);
 
       resolve(res.data);
 
